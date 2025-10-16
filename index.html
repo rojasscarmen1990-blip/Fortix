@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="facebook-domain-verification" content="iiqa9fivr2fbwf36iyl1guhcyrowf9" />
+  <title>Fortix - Soluciones Tecnológicas Avanzadas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    .orbitron {
+      font-family: 'Orbitron', monospace;
+    }
+
+    /* Fortix Modern Tech Theme - Orange/Red Gradient */
+    .fortix-bg {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 25%, #4a1a1a 50%, #6b1a1a 75%, #8b1a1a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .fortix-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 140, 0, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 69, 0, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(255, 165, 0, 0.2) 0%, transparent 50%);
+      opacity: 0.9;
+      z-index: 1;
+    }
+    
+    .fortix-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Fortix color scheme */
+    .text-orange {
+      color: #ff8c00;
+    }
+    
+    .text-red-orange {
+      color: #ff4500;
+    }
+    
+    .text-gold {
+      color: #ffa500;
+    }
+    
+    .text-fortix-title {
+      color: #ffffff;
+      font-weight: 900;
+    }
+
+    /* Modern cards with Fortix theme */
+    .fortix-card {
+      background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(255, 140, 0, 0.1));
+      border: 2px solid #ff8c00;
+      backdrop-filter: blur(20px);
+      box-shadow: 
+        0 0 30px rgba(255, 140, 0, 0.3),
+        inset 0 0 30px rgba(255, 140, 0, 0.1);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .fortix-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #ff8c00, #ff4500, #ffa500, #ff8c00);
+      background-size: 400% 400%;
+      animation: fortixGlow 3s ease infinite;
+      z-index: -1;
+      border-radius: inherit;
+    }
+    
+    .fortix-card:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 
+        0 25px 50px rgba(255, 140, 0, 0.4),
+        0 0 40px rgba(255, 69, 0, 0.3);
+      border-color: #ff4500;
+    }
+
+    @keyframes fortixGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Modern geometric shapes */
+    .fortix-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(45deg, #ff8c00, #ff4500);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
+    }
+
+    /* Grid pattern */
+    .grid-bg {
+      background-image: 
+        linear-gradient(90deg, rgba(255, 140, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 140, 0, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+      position: relative;
+    }
+    
+    .grid-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(255, 69, 0, 0.2) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(255, 140, 0, 0.2) 2px, transparent 2px);
+      background-size: 40px 40px;
+    }
+
+    /* Smooth animations */
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Pulse animation */
+    .pulse-orange {
+      animation: pulseFortix 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulseFortix {
+      0%, 100% { 
+        box-shadow: 0 0 20px #ff8c00, 0 0 40px #ff8c00;
+        border-color: #ff8c00;
+      }
+      50% { 
+        box-shadow: 0 0 30px #ffa500, 0 0 60px #ffa500;
+        border-color: #ffa500;
+      }
+    }
+
+    /* Modern panels */
+    .modern-panel {
+      background: linear-gradient(135deg, rgba(45, 27, 27, 0.8) 0%, rgba(255, 140, 0, 0.3) 100%);
+      border-left: 4px solid #ff8c00;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .modern-panel:hover {
+      transform: translateX(10px);
+      border-left-color: #ffa500;
+      box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
+    }
+
+    /* Wave effect */
+    .wave-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 98px,
+        rgba(255, 140, 0, 0.05) 100px
+      );
+      animation: waveFlow 15s linear infinite;
+    }
+    
+    @keyframes waveFlow {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #ff8c00, #ffa500);
+      border-radius: 5px;
+    }
+
+    /* WhatsApp button modern style */
+    .whatsapp-modern {
+      background: linear-gradient(135deg, #25d366, #128c7e, #ff8c00);
+      animation: modernPulse 2s infinite;
+      border: 2px solid #ff8c00;
+      box-shadow: 0 0 25px rgba(255, 140, 0, 0.5);
+    }
+    
+    @keyframes modernPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 25px rgba(255, 140, 0, 0.5);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 35px rgba(255, 165, 0, 0.7);
+      }
+    }
+
+    /* Typing effect */
+    .typing-effect {
+      overflow: hidden;
+      border-right: 3px solid #ff8c00;
+      white-space: nowrap;
+      animation: typing 4s steps(50, end), blink-cursor 0.75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink-cursor {
+      from, to { border-color: transparent; }
+      50% { border-color: #ff8c00; }
+    }
+
+    /* Button hover effects */
+    .btn-fortix {
+      background: linear-gradient(135deg, #ff8c00, #ff4500);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-fortix::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn-fortix:hover::before {
+      left: 100%;
+    }
+    
+    .btn-fortix:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(255, 140, 0, 0.4);
+    }
+
+    /* Hexagon pattern background */
+    .hex-pattern {
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 140, 0, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(255, 69, 0, 0.1) 2px, transparent 2px);
+      background-size: 60px 60px;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+
+  <!-- WAVE BACKGROUND EFFECT -->
+  <div class="wave-bg fixed inset-0 pointer-events-none z-0"></div>
+
+  <!-- FORTIX HEADER -->
+  <header class="fortix-bg min-h-screen flex items-center relative">
+    <div class="fortix-content w-full">
+      
+      <!-- Modern Navigation -->
+      <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-xl border-b-2 border-orange-500">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+          <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <div class="fortix-icon mr-4 pulse-orange">
+                <div class="text-white font-bold text-2xl">⚡</div>
+              </div>
+              <span class="text-2xl font-black orbitron text-fortix-title">FORTIX</span>
+            </div>
+            
+            <!-- Menu -->
+            <ul class="hidden md:flex space-x-8 text-orange-400 font-bold orbitron">
+              <li><a href="#inicio" class="hover:text-red-400 transition duration-300 relative group">
+                  INICIO
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+              <li><a href="#nosotros" class="hover:text-red-400 transition duration-300 relative group">
+                  NOSOTROS
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+              <li><a href="#servicios" class="hover:text-red-400 transition duration-300 relative group">
+                  SERVICIOS
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+              <li><a href="#contacto" class="hover:text-red-400 transition duration-300 relative group">
+                  CONTACTO
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="max-w-7xl mx-auto px-6 py-20 mt-20">
+        <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+          
+          <!-- Left Content -->
+            <div class="text-center lg:text-left">
+            <div class="mb-8">
+              <h1 class="text-7xl md:text-8xl font-black orbitron float-animation mb-4">
+                <span class="text-fortix-title">FORTIX</span>
+              </h1>
+              <div class="typing-effect text-2xl md:text-3xl text-orange font-bold">
+                SOLUCIONES TECNOLÓGICAS AVANZADAS
+              </div>
+              </div>
+              
+            <!-- Modern Stats -->
+            <div class="grid grid-cols-2 gap-6 mb-12">
+              <div class="fortix-card p-6 rounded-xl">
+                <div class="text-4xl text-orange mb-2 orbitron font-black">+300</div>
+                <div class="text-gray-300">CLIENTES</div>
+              </div>
+              <div class="fortix-card p-6 rounded-xl">
+                <div class="text-4xl text-red-orange mb-2 orbitron font-black">24/7</div>
+                <div class="text-gray-300">SOPORTE</div>
+              </div>
+              <div class="fortix-card p-6 rounded-xl">
+                <div class="text-4xl text-gold mb-2 orbitron font-black">+50</div>
+                <div class="text-gray-300">PROYECTOS</div>
+              </div>
+              <div class="fortix-card p-6 rounded-xl">
+                <div class="text-4xl text-orange mb-2 orbitron font-black">TOP</div>
+                <div class="text-gray-300">CALIDAD</div>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <button class="btn-fortix px-12 py-6 rounded-xl text-xl font-bold orbitron text-white border-2 border-orange-500 transition-all duration-300">
+              EXPLORAR SERVICIOS
+            </button>
+          </div>
+
+          <!-- Right Content - Modern Image -->
+            <div class="relative">
+            <div class="fortix-card p-8 rounded-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80" 
+                alt="Tecnología y conexiones digitales - Fortix" 
+                class="w-full h-96 object-cover rounded-lg"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-orange-500/20 via-transparent to-red-400/20 rounded-2xl"></div>
+              </div>
+            
+            <!-- Floating elements -->
+            <div class="absolute -top-6 -right-6 fortix-icon pulse-orange">
+              <div class="text-white font-bold text-xl">⚡</div>
+              </div>
+            <div class="absolute -bottom-6 -left-6 fortix-icon pulse-orange" style="animation-delay: 1s;">
+              <div class="text-white font-bold text-xl">🔥</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION - MODERN GRID DESIGN -->
+  <section id="nosotros" class="grid-bg py-32 bg-gray-800 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+        <h2 class="text-6xl font-black orbitron text-orange float-animation mb-8">SOBRE FORTIX</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto"></div>
+      </div>
+      
+      <!-- Modern panels layout -->
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Panel 1 -->
+        <div class="modern-panel p-8 rounded-xl">
+          <div class="fortix-icon mb-6 mx-auto">
+            <div class="text-white font-bold text-2xl">🎯</div>
+          </div>
+          <h3 class="text-2xl font-bold orbitron text-orange mb-4">MISIÓN</h3>
+          <p class="text-gray-300">Proporcionar soluciones tecnológicas de vanguardia que impulsen la transformación digital de empresas, ofreciendo servicios innovadores y de alta calidad en Mar del Plata.</p>
+        </div>
+        
+        <!-- Panel 2 -->
+        <div class="modern-panel p-8 rounded-xl">
+          <div class="fortix-icon mb-6 mx-auto">
+            <div class="text-white font-bold text-2xl">🚀</div>
+            </div>
+          <h3 class="text-2xl font-bold orbitron text-red-orange mb-4">VISIÓN</h3>
+          <p class="text-gray-300">Ser la empresa líder en soluciones tecnológicas en Mar del Plata, reconocida por nuestra innovación, calidad excepcional y compromiso con el éxito de nuestros clientes.</p>
+        </div>
+
+        <!-- Panel 3 -->
+        <div class="modern-panel p-8 rounded-xl">
+          <div class="fortix-icon mb-6 mx-auto">
+            <div class="text-white font-bold text-2xl">💎</div>
+          </div>
+          <h3 class="text-2xl font-bold orbitron text-gold mb-4">VALORES</h3>
+          <p class="text-gray-300">Innovación tecnológica, excelencia en el servicio, integridad profesional y compromiso con la satisfacción del cliente son los pilares fundamentales de Fortix.</p>
+        </div>
+      </div>
+      
+      <!-- Central Image -->
+      <div class="flex justify-center mt-16">
+        <div class="fortix-card p-6 rounded-2xl">
+            <img 
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Oficina moderna de Fortix" 
+            class="w-full max-w-2xl h-64 object-cover rounded-lg"
+          />
+        </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- SERVICES SECTION - MODERN GRID DESIGN -->
+  <section id="servicios" class="bg-gray-900 py-32 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-6xl font-black orbitron text-orange float-animation mb-8">NUESTROS SERVICIOS</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto"></div>
+      </div>
+      
+      <!-- Modern Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Service 1 -->
+        <div class="fortix-card p-8 rounded-2xl group">
+          <div class="fortix-icon mb-6">
+            <div class="text-white font-bold text-xl">💻</div>
+            </div>
+            <img 
+            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Desarrollo web profesional" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron text-orange mb-4">DESARROLLO WEB</h3>
+          <p class="text-gray-300 mb-4">Sitios web modernos y responsivos que impulsan tu presencia digital con tecnologías de última generación.</p>
+          <div class="flex items-center text-orange-400">
+            <span class="mr-2">•</span>
+            <span class="text-sm font-bold">TECNOLOGÍA AVANZADA</span>
+          </div>
+          </div>
+        
+        <!-- Service 2 -->
+        <div class="fortix-card p-8 rounded-2xl group">
+          <div class="fortix-icon mb-6">
+            <div class="text-white font-bold text-xl">📱</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Aplicaciones móviles" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron text-red-orange mb-4">APPS MÓVILES</h3>
+          <p class="text-gray-300 mb-4">Aplicaciones móviles nativas e híbridas que conectan tu negocio con tus clientes en cualquier momento.</p>
+          <div class="flex items-center text-gold-400">
+            <span class="mr-2">•</span>
+            <span class="text-sm font-bold">EXPERIENCIA SUPERIOR</span>
+          </div>
+      </div>
+      
+        <!-- Service 3 -->
+        <div class="fortix-card p-8 rounded-2xl group">
+          <div class="fortix-icon mb-6">
+            <div class="text-white font-bold text-xl">☁️</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Soluciones en la nube" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron text-gold mb-4">CLOUD COMPUTING</h3>
+          <p class="text-gray-300 mb-4">Infraestructura en la nube escalable y segura que optimiza tus operaciones y reduce costos.</p>
+          <div class="flex items-center text-orange-400">
+            <span class="mr-2">•</span>
+            <span class="text-sm font-bold">ESCALABILIDAD TOTAL</span>
+          </div>
+          </div>
+          
+        <!-- Service 4 -->
+        <div class="fortix-card p-8 rounded-2xl group">
+          <div class="fortix-icon mb-6">
+            <div class="text-white font-bold text-xl">🛡️</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Ciberseguridad" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron text-orange mb-4">CIBERSEGURIDAD</h3>
+          <p class="text-gray-300 mb-4">Protección integral de tus datos y sistemas con las mejores prácticas de seguridad digital.</p>
+          <div class="flex items-center text-orange-400">
+            <span class="mr-2">•</span>
+            <span class="text-sm font-bold">PROTECCIÓN AVANZADA</span>
+          </div>
+          </div>
+          
+        <!-- Service 5 -->
+        <div class="fortix-card p-8 rounded-2xl group">
+          <div class="fortix-icon mb-6">
+            <div class="text-white font-bold text-xl">📊</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80" 
+            alt="Análisis de datos" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron text-red-orange mb-4">ANÁLISIS DE DATOS</h3>
+          <p class="text-gray-300 mb-4">Transformamos tus datos en insights valiosos para tomar decisiones estratégicas informadas.</p>
+          <div class="flex items-center text-gold-400">
+            <span class="mr-2">•</span>
+            <span class="text-sm font-bold">INSIGHTS VALIOSOS</span>
+          </div>
+          </div>
+          
+        <!-- Service 6 -->
+        <div class="fortix-card p-8 rounded-2xl group">
+          <div class="fortix-icon mb-6">
+            <div class="text-white font-bold text-xl">🚀</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2134&q=80" 
+            alt="Transformación digital" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron text-gold mb-4">TRANSFORMACIÓN DIGITAL</h3>
+          <p class="text-gray-300 mb-4">Consultoría especializada para modernizar tus procesos y llevar tu empresa al siguiente nivel.</p>
+          <div class="flex items-center text-orange-400">
+            <span class="mr-2">•</span>
+            <span class="text-sm font-bold">INNOVACIÓN CONTINUA</span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- TESTIMONIALS - MODERN DESIGN -->
+  <section class="fortix-bg py-32 relative">
+      <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-6xl font-black orbitron text-red-orange float-animation mb-8">LO QUE DICEN NUESTROS CLIENTES</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto"></div>
+            </div>
+      
+      <!-- Modern testimonials -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="fortix-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-orange-400 mr-4" 
+              src="https://randomuser.me/api/portraits/women/32.jpg" 
+              alt="María González"
+            />
+            <div>
+              <h4 class="font-bold orbitron text-orange text-lg">Sofía Martínez</h4>
+              <p class="text-gold-400 text-sm">CEO TechStart</p>
+                </div>
+              </div>
+          <p class="text-gray-300 italic">"Fortix transformó completamente nuestro negocio digital. Su equipo es excepcional y los resultados superaron nuestras expectativas."</p>
+              <div class="flex mt-4">
+            <span class="text-yellow-400">★★★★★</span>
+              </div>
+            </div>
+
+        <div class="fortix-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-red-orange-400 mr-4" 
+              src="https://randomuser.me/api/portraits/men/42.jpg" 
+              alt="Carlos Mendoza"
+            />
+            <div>
+              <h4 class="font-bold orbitron text-red-orange text-lg">Diego Rodríguez</h4>
+              <p class="text-gold-400 text-sm">Director de IT</p>
+                </div>
+              </div>
+          <p class="text-gray-300 italic">"Fortix nos brindó soluciones innovadoras que optimizaron todos nuestros procesos. Su soporte es incomparable."</p>
+              <div class="flex mt-4">
+            <span class="text-yellow-400">★★★★★</span>
+              </div>
+            </div>
+
+        <div class="fortix-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-orange-500 mr-4" 
+              src="https://randomuser.me/api/portraits/women/24.jpg" 
+              alt="Ana Rodríguez"
+            />
+            <div>
+              <h4 class="font-bold orbitron text-gold text-lg">Lucía Fernández</h4>
+              <p class="text-gold-400 text-sm">Gerente de Marketing</p>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"La aplicación que desarrolló Fortix revolucionó la forma en que nos conectamos con nuestros clientes. Excelente trabajo."</p>
+          <div class="flex mt-4">
+            <span class="text-yellow-400">★★★★★</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  <!-- CONTACT FOOTER - MODERN DESIGN -->
+  <footer id="contacto" class="bg-gray-900 text-white py-20 border-t-2 border-orange-500">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12 mb-16">
+        
+        <!-- Company Info -->
+        <div class="md:col-span-1">
+          <div class="flex items-center mb-8">
+            <div class="fortix-icon mr-4 pulse-orange">
+              <div class="text-white font-bold text-xl">⚡</div>
+            </div>
+            <h3 class="text-4xl font-bold orbitron text-fortix-title">FORTIX</h3>
+          </div>
+          <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+            Tu socio estratégico en transformación digital en Mar del Plata. Ofrecemos soluciones tecnológicas innovadoras y servicios especializados para impulsar el crecimiento de tu empresa.
+          </p>
+          <div class="flex space-x-4">
+            <div class="w-12 h-12 fortix-card rounded-full flex items-center justify-center">
+              <span class="text-orange-400">💻</span>
+            </div>
+            <div class="w-12 h-12 fortix-card rounded-full flex items-center justify-center">
+              <span class="text-orange-500">🚀</span>
+            </div>
+            <div class="w-12 h-12 fortix-card rounded-full flex items-center justify-center">
+              <span class="text-orange-600">☁️</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-2xl font-bold orbitron text-red-orange mb-8">CONTACTO DIRECTO</h4>
+          <div class="space-y-6 text-gray-300">
+            <div class="flex items-start space-x-4">
+              <div class="fortix-icon">
+                <div class="text-white text-sm">📍</div>
+              </div>
+              <span>Vucetich 1531, Mar del Plata</span>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="fortix-icon">
+                <div class="text-white text-sm">📞</div>
+              </div>
+              <a href="tel:+5491164670688" class="hover:text-orange-400 transition text-lg font-bold orbitron">+5491164670688</a>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="fortix-icon">
+                <div class="text-white text-sm">✉️</div>
+              </div>
+              <a href="mailto:info@fortix.com" class="hover:text-orange-400 transition">info@fortix.com</a>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="fortix-icon">
+                <div class="text-white text-sm">🏢</div>
+              </div>
+              <span>CUIL: 27431850384</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Operating Hours -->
+        <div>
+          <h4 class="text-2xl font-bold orbitron text-gold mb-8">HORARIOS DE ATENCIÓN</h4>
+          <div class="space-y-4 text-gray-300">
+            <div class="fortix-card p-4 rounded-lg">
+              <p class="font-bold text-orange-400 mb-2 orbitron">OFICINA</p>
+              <p>Lun-Vie: 09:00-18:00</p>
+            </div>
+            <div class="fortix-card p-4 rounded-lg">
+              <p class="font-bold text-orange-500 mb-2 orbitron">SOPORTE TÉCNICO</p>
+              <p>24/7 disponible</p>
+              <p>Asistencia remota</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t-2 border-orange-500 pt-12 text-center">
+        <div class="fortix-icon mx-auto mb-6 pulse-orange">
+          <div class="text-white font-bold text-xl">⚡</div>
+        </div>
+        <p class="text-orange-400 mb-3 text-xl font-bold orbitron">FORTIX - TU SOCIO EN TRANSFORMACIÓN DIGITAL</p>
+        <p class="text-gray-400">© 2024 Todos los derechos reservados | Innovación que conecta</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODERN WHATSAPP BUTTON -->
+  <a 
+    href="https://wa.me/5491164670688?text=¡Hola%20Fortix!%20⚡%20Me%20interesa%20conocer%20sus%20servicios%20tecnológicos" 
+    target="_blank"
+    class="fixed bottom-8 right-8 whatsapp-modern text-white p-6 rounded-full shadow-2xl z-50 transition-all duration-300 hover:scale-110 group"
+    aria-label="Contactar por WhatsApp"
+  >
+    <div class="relative">
+      <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+      </svg>
+      <!-- Modern notification -->
+      <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-xs font-bold pulse-orange">
+        ⚡
+      </div>
+    </div>
+  </a>
+
+</body>
+</html>
